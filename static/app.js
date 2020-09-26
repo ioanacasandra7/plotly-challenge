@@ -44,12 +44,12 @@ Object.entries(met[0]).forEach(function ([key, value]){
     let sampleVals = sampl[0].sample_values;
     let otuLabels = sampl[0].otu_labels;
 
-    plotBar(otuIds.slice(0,10), otuLabels.slice(0,10), sampleVals.slice(0,10));
-    plotBubble(otuIds, otuLabels, sampleVals);
+    plotBarChart(otuIds.slice(0,10), otuLabels.slice(0,10), sampleVals.slice(0,10));
+    plotBubbleChart(otuIds, otuLabels, sampleVals);
  });
 }
 // create function for the Bar chart
-function plotBar(otuIds, otuLabels, sampleVals){
+function plotBarChart(otuIds, otuLabels, sampleVals){
     let trace1 = {
     y: otuIds.map(id => "OTU ID ".concat(id)).reverse(),
     x: sampleVals.reverse(),
@@ -69,7 +69,7 @@ function plotBar(otuIds, otuLabels, sampleVals){
 }
 
 // create function for the Bubble chart
-function plotBubble(otuIds, otuLabels, sampleVals){
+function plotBubbleChart(otuIds, otuLabels, sampleVals){
     let trace2 = {
     x: otuIds,
     y: sampleVals,
